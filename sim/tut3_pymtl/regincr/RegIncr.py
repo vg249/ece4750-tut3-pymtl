@@ -35,6 +35,10 @@ class RegIncr( Model ):
     # later you will a line tracing function to compactly output the
     # input, register, and output vaules.
     # '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    @s.combinational
+    def block2():
+      s.out.value = s.reg_out + 1
+      
     def line_trace( s ):
       return "{} ({}) {}".format( s.in_, s.reg_out, s.out )
 

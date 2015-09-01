@@ -18,6 +18,7 @@ input_values.extend( [0]*3 )
 # Elaborate the model
 
 model = RegIncr()
+model.vcd_file = "regincr-sim.vcd"
 model.elaborate()
 
 # Create and reset simulator
@@ -42,9 +43,9 @@ for input_value in input_values:
   # replace this with a call to the simulator's print_line_trace method.
   # ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-  #print " cycle = {}: in = {}, out = {}" \
-  #  .format( sim.ncycles, model.in_, model.out )
-  sim.print_line_trace()
+  print " cycle = {}: in = {}, out = {}" \
+    .format( sim.ncycles, model.in_, model.out )
+
   # Tick simulator one cycle
 
   sim.cycle()
