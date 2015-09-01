@@ -15,12 +15,14 @@ input_values = [ int(x,0) for x in argv[1:] ]
 
 input_values.extend( [0]*3 )
 
-# ''' TUTORIAL TASK ''''''''''''''''''''''''''''''''''''''''''''''''''''''
-# This simulator script is incomplete. As part of the tutorial you will
-# need to add the code for constructing and elaborating a RegIncr model
-# before using the SimulationTool to create a simulator. Later in the
-# tutorial you will nee to add a line to enable VCD dumping.
-# ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+# Elaborate the model
+
+model = RegIncr()
+model.elaborate()
+
+# Create and reset simulator
+
+sim = SimulationTool( model )
 
 # Reset simulator
 
