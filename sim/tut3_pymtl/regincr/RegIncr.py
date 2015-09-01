@@ -35,4 +35,6 @@ class RegIncr( Model ):
     # later you will a line tracing function to compactly output the
     # input, register, and output vaules.
     # '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    def line_trace( s ):
+      return "{} ({}) {}".format( s.in_, s.reg_out, s.out )
 
